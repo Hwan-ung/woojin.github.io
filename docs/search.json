@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "My resume"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I’m majoring in statistics and minoring in data science at UC Berkeley."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About me",
+    "section": "Education",
+    "text": "Education\n\nUniversity of California, Berkeley   \nBachelor of Arts, Statistics 2022~2026\n\nWork Experience\n\nTechnical Administrative: Thermal Observation Device Specialist\nRepublic of Korea Army - The 51st Infantry Division\nMay 2023 - October 2024"
+  },
+  {
+    "objectID": "about.html#work-experience",
+    "href": "about.html#work-experience",
+    "title": "About me",
+    "section": "Work Experience",
+    "text": "Work Experience\n\nTechnical Administrative: Thermal Observation Device Specialist\nRepublic of Korea Army - The 51st Infantry Division\nMay 2023 - October 2024"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Woojin Lee",
+    "section": "",
+    "text": "B.A. in Statistics at University of California, Berkeley"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "April 2025\nhttps://woojin0829.shinyapps.io/SP500-Project\nDescription: Visualizing historic investments in the S&P 500 stock market index. Users can freely simulate a historical investment with their desired inputs."
+  },
+  {
+    "objectID": "projects.html#sp500-investment-simulator",
+    "href": "projects.html#sp500-investment-simulator",
+    "title": "Projects",
+    "section": "",
+    "text": "April 2025\nhttps://woojin0829.shinyapps.io/SP500-Project\nDescription: Visualizing historic investments in the S&P 500 stock market index. Users can freely simulate a historical investment with their desired inputs."
+  }
+]
