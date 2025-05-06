@@ -1,0 +1,21 @@
+---
+title: "Woojin Lee"
+about:
+  template: jolla
+  image: assets/wjprofile.jpg
+  links:
+    - icon: LinkedIn
+      text: LinkedIn
+      href: https://www.linkedin.com/woojinlee
+      target: _blank # opens link in a new browser tab, not from a same tab
+    - icon: github
+      text: Github
+      href: https://github.com
+      target: _blank # opens link in a new browser tab
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+      target: _blank # opens link in a new browser tab
+---
+
+B.A. in Statistics at University of California, Berkeley

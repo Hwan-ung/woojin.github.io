@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  favicon: assets/favicon.ico
+  title: "Woojin Lee"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: resume.qmd #(or just put a direct link here)
+        text: Resume
+      - href: projects.qmd
+        text: Projects
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

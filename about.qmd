@@ -1,0 +1,25 @@
+---
+title: "About me"
+---
+
+I'm majoring in statistics and minoring in data science at UC Berkeley. 
+
+## Education
+:::{#education1 style="line-height: 0.8;"}
+**University of California, Berkeley** &nbsp;
+<img src="assets/cal-logo.png" width="28" height="28">
+
+Bachelor of Arts, Statistics
+2022~2026
+
+## Work Experience
+
+:::{#work-experience1 style="line-height: 0.8;"}
+
+**Technical Administrative: Thermal Observation Device Specialist**
+
+*Republic of Korea Army - The 51st Infantry Division*
+
+May 2023 - October 2024
+
+

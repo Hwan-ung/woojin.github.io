@@ -1,0 +1,211 @@
+# ===============================================
+# Fill in the following fields
+# ===============================================
+# Title:
+# Description:
+# Details: 
+# Author: 
+# Date:
+
+
+# ===============================================
+# Required packages
+# (you can use other packages if you want to)
+# ===============================================
+library(shiny)
+library(tidyverse)  # for data manipulation and graphics
+library(tidytext)   # for text mining
+library(DT)         # to render Data Tables nicely
+library(plotly)     # if you are interested in using ggplotly()
+
+
+
+# ===============================================
+# Import data
+# ===============================================
+# for demo purposes of the "template", we use data starwars
+# (but you will have to replace this with SOTU data)
+sotu_data <- read_csv("sotu.csv")
+
+# I'm doing a sentiment analysis and I'm not allowed to use get_sentiments()
+# get_sentiments() requires user input, which will produce an error in published app
+# Therefore, I'm importing the CSV files
+
+bing <- read_csv("bing.csv")
+afinn <- read_csv("afinn.csv")
+nrc <- read_csv("nrc.csv")
+loughran <- read_csv("loughran.csv")
+
+
+# ===============================================
+# Define "ui" for application
+# ===============================================
+
+ui <- fluidPage(
+  
+  # Application title
+  titlePanel("State of The Union Text Analysis"),
+  
+  # -------------------------------------------------------
+  # Input widgets 
+  # Customize the following dummy widgets with your own inputs
+  # -------------------------------------------------------
+  fluidRow(
+    # replace with your widgets
+    # Year range here
+    # year should be 1790~2021
+    column(3,
+           sliderInput(
+             inputId = "year_rng",
+             label   = "Year range",
+             min     = min(sotu_data$year),
+             max     = max(sotu_data$year),
+             value   = c(min(sotu_data$year), max(sotu_data$year)),
+             sep     = ""
+           )
+    ), # closes column 1
+    
+    # replace with your widgets
+    # Lexicon
+    column(3,
+           selectInput(
+             inputId = "lexicon",
+             label = "Sentiment Lexicon",
+             choices = c("bing", "afinn", "nrc", "loughran"),
+             selected = "bing"
+           )
+    ), # closes column 2
+    
+    # replace with your widgets
+    column(3,
+           radioButtons(
+             inputId = "by",
+             label = "Aggregate by",
+             choices = c("Year", "President"),
+             selected = "Year"
+           )
+    ), # closes column 3
+    
+    # replace with your widgets
+    # Analysis
+    column(3,
+           radioButtons(
+             inputId = "by",
+             label = "Aggregate by",
+             choices = c("Year", "President"),
+             selected = "Year"
+           )
+    ) # closes column 4
+    
+  ), # closes fluidRow
+  
+  hr(), # horizontal rule
+  
+  # -------------------------------------------------------
+  # Tabset Panel of outputs
+  # Customize the following output elements with your own outputs
+  # -------------------------------------------------------
+  tabsetPanel(type = "tabs",
+              # Tab1
+              tabPanel("Sentiment Analysis",
+                       h3("2.1 Sentiment Analysis"),
+                       plotOutput("plot1", height = "400px"),
+                       hr(),
+                       DT::dataTableOutput('table1')),
+              # Tab2
+              tabPanel("Word Trend Analysis", 
+                       h3("2.2 Word Trend Analysis"),
+                       plotOutput("plot2", height = "400px"),
+                       hr(),
+                       dataTableOutput('table2'))
+  ) # closes tabsetPanel
+  
+) # closes ui
+
+
+
+# ===============================================
+# Define Server "server" logic
+# ===============================================
+
+server <- function(input, output) {
+  
+  # you may need to create reactive objects
+  # (e.g. dummy data frame to be used in plot1)
+  
+  sentiment_data <- reactive({
+    req(input$lexicon, input$by, input$year_rng)
+  })
+  
+  df_tokens <- sotu_data %>%
+    filter(year >= input$year_rng[1],
+           year <= input$year_rng[2]) %>%
+    unnest_tokens(word, text)
+  
+  # why do we need this part?
+  csv_lex <- switch(input$lexicon,
+                    bing = bing,
+                    afinn = afinn,
+                    nrc = nrc,
+                    loughran = loughran)
+  
+  if (input$lexicon == "afinn") {
+    df_tokens %>%
+      inner_join(csv_lex, by = "word") %>%
+      mutate(group = if (input$by == "Year") year else name) %>%
+      group_by(group) %>%
+      summarize(score = sum(value), .groups ="drop")
+  }
+  
+  
+  # ===============================================
+  # Outputs for the first TAB
+  # ===============================================
+  
+  # code for plot1
+  output$plot1 <- renderPlot({
+    # replace the code below with your code!!!
+    ggplot(data = dat_freq(), aes(x = sex, y = n)) +
+      geom_col()
+  })
+  
+  # code for numeric summaries of frequencies
+  output$table1 <- renderDataTable({
+    # replace the code below with your code!!!
+    dat_freq()
+  })
+  
+  
+  # ===============================================
+  # Outputs for the second TAB
+  # ===============================================
+  
+  # code for plot2
+  output$plot2 <- renderPlot({
+    # replace the code below with your code!!!
+    p1 = ggplot(data = dat, aes(x = height, y = mass)) +
+      geom_point()
+    p1
+  })
+  
+  # code for statistics
+  output$table2 <- renderDataTable({
+    # replace the code below with your code!!!
+    dat |> 
+      group_by(gender) |> 
+      summarize(
+        median_height = median(height, na.rm = TRUE),
+        median_mass = median(mass, na.rm = TRUE)
+      )
+  })
+  
+}
+
+
+
+# ===============================================
+# Run the application
+# ===============================================
+
+shinyApp(ui = ui, server = server)
+
