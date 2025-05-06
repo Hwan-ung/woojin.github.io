@@ -2,7 +2,7 @@
 title: "Woojin Lee"
 about:
   template: jolla
-  image: assets/wjprofile.jpg
+  image: assets/profile1.jpg
   links:
     - icon: LinkedIn
       text: LinkedIn
