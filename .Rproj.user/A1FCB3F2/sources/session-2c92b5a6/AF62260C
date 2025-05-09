@@ -3,7 +3,7 @@
     "path": "C:/Users/Justi/Downloads/2025 Spring Semester/STAT133/Quartowebsite/about.qmd",
     "project_path": "about.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "347816593",
     "contents": "",
     "dirty": false,
     "created": 1746413226860.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "4,72",
+        "cursorPosition": "5,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1746419350,
+    "lastKnownWriteTime": 1746570039,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1746419350976,
+    "last_content_update": 1746570039299,
     "read_only": false,
     "read_only_alternatives": []
 }

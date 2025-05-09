@@ -6,15 +6,15 @@ about:
   links:
     - icon: LinkedIn
       text: LinkedIn
-      href: https://www.linkedin.com/woojinlee
+      href: https://kr.linkedin.com/in/woojin-lee-00199b20a
       target: _blank # opens link in a new browser tab, not from a same tab
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/Hwan-ung
       target: _blank # opens link in a new browser tab
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
+    - icon: envelope
+      text: leewoojin@berkeley.edu
+      href: mailto:leewoojin@berkeley.edu
       target: _blank # opens link in a new browser tab
 ---
 

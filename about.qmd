@@ -2,7 +2,7 @@
 title: "About me"
 ---
 
-I'm majoring in statistics and minoring in data science at UC Berkeley. 
+I'm majoring in statistics at UC Berkeley. 
 
 ## Education
 :::{#education1 style="line-height: 0.8;"}
